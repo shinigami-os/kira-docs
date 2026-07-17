@@ -1,0 +1,173 @@
+/* Kira Linux docs theme - paired with the main site's dark, flat, purple-accent look. */
+
+:root,
+html.dark {
+  --vp-font-family-base: 'Raleway', -apple-system, sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', monospace;
+
+  --vp-c-bg: #0a0a0f;
+  --vp-c-bg-alt: #0c0b12;
+  --vp-c-bg-elv: #0c0b12;
+  --vp-c-bg-soft: #0c0b12;
+
+  --vp-c-text-1: #e9e6f2;
+  --vp-c-text-2: #8a84a0;
+  --vp-c-text-3: #6a6480;
+
+  --vp-c-border: #221d2e;
+  --vp-c-divider: #1b1726;
+  --vp-c-gutter: #1b1726;
+
+  --vp-c-brand-1: #a855ff;
+  --vp-c-brand-2: #a855ff;
+  --vp-c-brand-3: #c58bff;
+  --vp-c-brand-soft: rgba(168, 85, 255, 0.14);
+
+  --vp-button-brand-border: #a855ff;
+  --vp-button-brand-text: #0a0a0f;
+  --vp-button-brand-bg: #a855ff;
+  --vp-button-brand-hover-border: #c58bff;
+  --vp-button-brand-hover-text: #0a0a0f;
+  --vp-button-brand-hover-bg: #c58bff;
+  --vp-button-brand-active-border: #a855ff;
+  --vp-button-brand-active-text: #0a0a0f;
+  --vp-button-brand-active-bg: #a855ff;
+
+  --vp-button-alt-border: #2a2440;
+  --vp-button-alt-text: #c9c2dc;
+  --vp-button-alt-bg: transparent;
+  --vp-button-alt-hover-border: #a855ff;
+  --vp-button-alt-hover-text: #e9e6f2;
+  --vp-button-alt-hover-bg: transparent;
+
+  --vp-nav-bg-color: #0a0a0f;
+  --vp-sidebar-bg-color: #0a0a0f;
+
+  --vp-code-block-bg: #0c0b12;
+  --vp-code-color: #c9a7ff;
+  --vp-code-link-color: #a855ff;
+  --vp-code-link-hover-color: #c58bff;
+
+  --vp-custom-block-tip-bg: rgba(168, 85, 255, 0.08);
+  --vp-custom-block-tip-border: #2a2440;
+  --vp-custom-block-tip-text: #e9e6f2;
+  --vp-custom-block-tip-code-bg: #0c0b12;
+
+  --vp-custom-block-warning-bg: rgba(255, 204, 0, 0.06);
+  --vp-custom-block-danger-bg: rgba(255, 0, 90, 0.06);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  letter-spacing: normal;
+}
+
+/* Nav: match the main site's 52px hairline-bordered header. */
+.VPNav {
+  border-bottom: 1px solid #1b1726;
+  backdrop-filter: none;
+}
+.VPNavBar {
+  background: #0a0a0f !important;
+}
+.VPNavBar.has-sidebar .content-body {
+  background: transparent;
+}
+
+/* Sidebar */
+.VPSidebar {
+  border-right: 1px solid #1b1726;
+  background: #0a0a0f !important;
+}
+.VPSidebarItem.level-0 .text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6a6480 !important;
+}
+.VPSidebarItem .link:hover .text {
+  color: #e9e6f2 !important;
+}
+.VPSidebarItem.is-active > .item > .link .text {
+  color: #a855ff !important;
+}
+
+/* Nav/menu link labels in mono, matching the main site's nav typography. */
+.VPNavBarMenuLink,
+.VPNavBarTitle .title {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.02em;
+}
+
+/* Headings use the main site's light Raleway weight. */
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3 {
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+.vp-doc h1 {
+  font-size: 40px;
+}
+.vp-doc h2 {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 48px;
+}
+
+/* Code blocks: flat surface, thin border, no glow - matches the main site's terminal cards. */
+div[class*='language-'] {
+  border: 1px solid #221d2e;
+  border-radius: 9px;
+}
+.vp-doc div[class*='language-'] pre,
+.vp-doc div[class*='language-'] code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Inline code */
+.vp-doc :not(pre) > code {
+  background: #0c0b12;
+  border: 1px solid #221d2e;
+  color: #c9c2dc;
+  border-radius: 5px;
+}
+
+/* Tables */
+.vp-doc table {
+  border: 1px solid #1b1726;
+}
+.vp-doc th {
+  background: #0c0b12;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  color: #8a84a0;
+  border: 1px solid #1b1726;
+}
+.vp-doc td {
+  border: 1px solid #1b1726;
+}
+.vp-doc tr:nth-child(2n) {
+  background: transparent;
+}
+
+/* Home hero button radii, matching the main site's 6px buttons. */
+.VPButton {
+  border-radius: 6px !important;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+}
+
+/* Custom containers (tip/warning/danger) get the same flat-card treatment as the rest. */
+.vp-doc .custom-block {
+  border-radius: 9px;
+}
+
+/* Local search modal */
+.DocSearch-Modal {
+  background: #0c0b12 !important;
+}

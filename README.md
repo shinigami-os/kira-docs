@@ -1,12 +1,17 @@
 # kira-docs
 > Official documentation for Kira Linux.
 
-Covers installation, the flux package manager, the Shinigami kernel, runit service management, and contributing to the project.
+Covers installation, the flux package manager, the Shinigami kernel, runit service management, the desktop environments, and contributing to the project.
 
-## Status
-Pre-development. Documentation is being written alongside the base system and flux. Watch this repo for updates.
+Built with [VitePress](https://vitepress.dev/), deployed to [docs.kira-linux.com](https://docs.kira-linux.com) via GitHub Pages.
 
-See the [Kira Linux specification](https://github.com/shinigami-os) for the full project design.
+## Developing
+
+```sh
+npm install
+npm run dev       # localhost:5173
+npm run build     # static output in docs/.vitepress/dist
+```
 
 ## License
 MIT
