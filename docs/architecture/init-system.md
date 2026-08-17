@@ -37,7 +37,7 @@ kernel → runit-init (PID 1)
   └── stage 2: runsvdir /etc/sv
        ├── eudev                device management
        ├── udev-input-trigger   oneshot: prepares input devices
-       ├── getty-tty1           tty1 login, launches the desktop on desktop tier
+       ├── getty-tty1           tty1 login (console/server tier), or greetd (desktop tier)
        └── [everything installed by flux: networking, session bus, desktop, ...]
   └── stage 3: shutdown cleanup
 ```

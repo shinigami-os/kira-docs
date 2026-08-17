@@ -4,7 +4,7 @@
 
 | Command | Action |
 |---|---|
-| `flux install [-y] <package>` | Install a package, from the binary cache or compiled from source. `-y` skips the dependency confirmation prompt. |
+| `flux install [-y] <package>` | Install a package, from the binary cache or compiled from source. `-y` skips the dependency confirmation prompt. If no recipe exists, flux offers to install a matching Flatpak from Flathub instead. |
 | `flux remove [-a] <package>` | Remove a package and every file it installed. `-a` / `--autoremove` also sweeps any dependencies left orphaned by the removal. |
 | `flux autoremove` | Remove every installed package that was pulled in only as a dependency and is no longer needed by anything. |
 | `flux search <term>` | Search the recipe repository by name or description. |
@@ -12,8 +12,8 @@
 | `flux update` | Sync the local recipe repository with the remote one, and check whether a newer flux, kira-base, or kernel release is available. |
 | `flux build [--cross] <package>` | Force a local build, optionally against the configured cross sysroot. |
 | `flux list [-a]` | List installed packages, sorted alphabetically. `-a` includes auto-installed dependencies. |
-| `flux cache <subcommand>` | Manage the local binary cache. |
-| `flux compat <package>` | Install through the Debian compatibility container, for the rare package with nowhere else to come from. |
+| `flux cache <subcommand>` | Manage the local binary cache. **Not implemented yet** — every subcommand currently just prints a placeholder. |
+| `flux compat <package>` | Install through the Debian compatibility container, for the rare package with nowhere else to come from. **Not implemented yet** — the container path is still a stub. |
 | `flux version` | Print the installed flux version. |
 | `flux self-update` | Rebuild flux from the latest release tag and atomically replace the running binary. |
 | `flux base-update` | Update kira-base's core image (musl, BusyBox, runit, eudev, curl) to the latest release. |

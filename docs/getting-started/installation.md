@@ -14,7 +14,7 @@ Kira ships two live ISO variants. Both install either tier, the difference is on
 | ISO | Size | Boots into | Can install |
 |---|---|---|---|
 | `kira-console.iso` | ~220 MB | An interactive shell | Server or desktop tier |
-| `kira-desktop.iso` | ~854 MB | A full Sleex session, try-before-install | Desktop tier |
+| `kira-desktop-<DE>.iso` | ~854 MB | A full Sleex or SwayFX session, try-before-install | Desktop tier |
 
 If you already know you want the server tier, or you are comfortable installing over SSH, the console ISO is smaller and faster to write. If you want to try the desktop before committing to it, use the desktop ISO.
 

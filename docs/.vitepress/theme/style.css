@@ -82,7 +82,8 @@ body {
   border-right: 1px solid #1b1726;
   background: #0a0a0f !important;
 }
-.VPSidebarItem.level-0 .text {
+.VPSidebarItem.level-0 > .item > .text,
+.VPSidebarItem.level-0 > .item > .link > .text {
   font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
   letter-spacing: 0.1em;
@@ -117,6 +118,9 @@ body {
   border-top: none;
   padding-top: 0;
   margin-top: 48px;
+}
+.vp-doc h2 .header-anchor {
+  top: 0;
 }
 
 /* Code blocks: flat surface, thin border, no glow - matches the main site's terminal cards. */

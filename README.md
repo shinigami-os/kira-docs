@@ -18,7 +18,7 @@ docs/
     overview.md
     commands.md                   Command reference
     updating.md                   flux update / base-update / kernel-update / self-update
-    kotodama-recipes.md            Writing a kotodama recipe
+    kotodama-recipes.md           Writing a kotodama recipe
   desktop/
     overview.md
     sleex.md

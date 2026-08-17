@@ -5,7 +5,7 @@ SwayFX is Kira's second-choice desktop environment: a tiling Wayland compositor 
 ## Installing
 
 ```sh
-flux install kira-desktop-swayfx
+flux install kira-desktop-swayFX
 ```
 
 This registers SwayFX as an available session at the greeter, alongside anything else you have installed.
@@ -18,7 +18,7 @@ This registers SwayFX as an available session at the greeter, alongside anything
 | Status bar | eww |
 | Launcher | fuzzel |
 | Notifications | Mako |
-| Lock screen | swaylock-effects |
+| Lock screen | hyprlock |
 | Terminal | foot |
 | GUI file manager | PCManFM-Qt |
 | Audio | pipewire and wireplumber |
@@ -32,29 +32,16 @@ SwayFX reads its configuration from `~/.config/sway/config`, plain text and mean
 - Gaps: 4px inner, 8px outer.
 - Borders: 2px, no titlebar.
 - Corner radius: 8px, with blur and shadow effects enabled.
-- XWayland: disabled by default. Enable it in the config if you need it for a specific application.
+- XWayland: enabled by default, for apps like Electron-based clients that have no other display server to fall back to.
 
 ## Default keybindings
 
-| Action | Binding |
-|---|---|
-| Terminal | `Ctrl+Alt+T` |
-| Launcher | `$mod+d` |
-| Run command | `$mod+r` |
-| File manager | `$mod+e` |
-| Kill window | `$mod+q` |
-| Fullscreen | `$mod+f` |
-| Split horizontal | `$mod+h` |
-| Split vertical | `$mod+v` |
-| Toggle floating | `$mod+Shift+Space` |
-| Focus up / left / down / right | `$mod+i` / `$mod+j` / `$mod+k` / `$mod+l` |
-| Move window | `$mod+arrows` |
-| Workspaces 1 through 10 | `$mod+1` through `$mod+0` |
-| Move window to workspace | `$mod+Shift+1` through `$mod+Shift+0` |
-| Next / previous workspace | `$mod+Alt+Left` / `$mod+Alt+Right`, or `$mod+Scroll` |
-| Screenshot | `Print`, or `$mod+Shift+S` |
-| Lock screen | `$mod+Shift+L` |
-| Reload configuration | `$mod+Shift+R` |
+Keybindings are AZERTY-aware and largely dispatcher-based: most former direct-launch shortcuts now open a popup (calendar, control center, notifications, music, system monitor, power menu, launcher, keybind cheatsheet) rather than spawning an application directly, and only one popup can be open at a time.
+
+Rather than duplicate a list that can drift out of sync, check the two sources of truth directly:
+
+- Press the keybind cheatsheet popup shortcut from within a session for the full, current list.
+- Read `sway/config` itself, plain text and meant to be read, see [Configuration](#configuration) above for the path.
 
 `$mod` refers to whatever modifier key is set in your config, `Mod4` by default.
 

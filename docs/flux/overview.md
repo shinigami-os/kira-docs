@@ -51,6 +51,10 @@ Installed packages are tracked under `/var/lib/flux/installed/<package>/`:
 
 Because `files` is exact, `flux remove` never leaves orphaned files behind, and never deletes something it did not put there.
 
+## Flatpak fallback
+
+If `flux install <package>` finds no matching kotodama recipe, it checks Flathub for a package of the same name and offers to install that instead. A single match installs with the usual confirmation prompt (or automatically with `-y`); if Flathub has several matches, flux always asks you to pick one, even with `-y`, since that flag skips a yes/no, not a choice among candidates.
+
 ## Meta-packages
 
 A recipe with no `[source]` is a meta-package: just a dependency list, optionally with a small `%install` step (a few config files) or `%post-install` step (creating a system user, for example). Meta-packages never touch the binary cache and re-run their hooks on every install, which is what lets them pick up new dependencies or configuration changes without needing a version bump. Several of Kira's own building blocks, like the networking stack and the desktop environment packages, are meta-packages for exactly this reason.

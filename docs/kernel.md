@@ -7,7 +7,7 @@ Shinigami is the Linux kernel fork that powers Kira, based on a longterm upstrea
 Shinigami releases follow a two-part scheme:
 
 ```
-6.12.85-shinigami-26.07
+7.1.3-shinigami-26.08-3
 ```
 
 - **`LINUX_VERSION`**, the upstream Linux version this release is based on.
@@ -29,7 +29,8 @@ Patches are organized by category and every one has a documented reason, minimal
 | `mem/` | Memory tuning |
 | `sec/` | Security hardening |
 | `compat/` | Hardware compatibility fixes |
-| `config/` | Configuration-only changes |
+
+`perf/` and `compat/` are the categories currently carrying patches, `mem/` and `sec/` are reserved for when a patch needs them.
 
 ## Inspecting the running kernel
 

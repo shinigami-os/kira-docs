@@ -58,7 +58,10 @@ make DESTDIR=$DESTDIR install
 | `license` | An SPDX license identifier. |
 | `size` | Approximate installed size in megabytes, integer only. |
 
-**`[source]`**: a direct tarball URL and its SHA-256 checksum. Leave both empty to make a [meta-package](#meta-packages).
+**`[source]`**: normally a direct tarball URL and its SHA-256 checksum. Leave both empty to make a [meta-package](#meta-packages). Two other forms are accepted:
+
+- **`git+<repo>#<ref>`**: shallow-cloned instead of downloaded as a tarball. If `<ref>` is a floating branch rather than a tag, `sha256` is repurposed to hold a pinned commit hash instead of a checksum, so the build stays reproducible even though the branch itself moves.
+- **A bare single file** (a font, for example): copied into the build directory under its original name instead of being run through `tar`.
 
 **`[deps]`**: space-separated package lists. `build` is only pulled in when the package actually needs to compile, `runtime` is always resolved.
 
@@ -88,7 +91,7 @@ If a meta-package's `%install` or `%post-install` needs files that live in anoth
 
 A few rules that recipes are reviewed against before merge:
 
-- `sha256` must be the real checksum of the source tarball. `SKIP` is never accepted in the official repository.
+- `sha256` must be the real checksum of the source tarball, or, for a `git+` source on a floating branch, a real pinned commit hash. `SKIP` is never accepted in the official repository.
 - `url` must point directly to a source tarball, not a release page or a redirect that depends on content negotiation.
 - `name` must match the directory name exactly.
 - Hooks must install into `$DESTDIR`, never directly to `/`.
