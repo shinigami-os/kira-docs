@@ -4,7 +4,7 @@
 
 | Command | Action |
 |---|---|
-| `flux install [-y] <package>` | Install a package, from the binary cache or compiled from source. `-y` skips the dependency confirmation prompt. If no recipe exists, flux offers to install a matching Flatpak from Flathub instead. |
+| `flux install [-y] [-f] <package>...` | Install one or more packages, from the binary cache or compiled from source. Dependencies across all of them are resolved together into one list. `-y` skips the confirmation prompt; `-f` forces a rebuild even if the package is already installed at the current version. If no recipe exists for a given name, flux offers to install a matching Flatpak from Flathub instead. |
 | `flux remove [-a] <package>` | Remove a package and every file it installed. `-a` / `--autoremove` also sweeps any dependencies left orphaned by the removal. |
 | `flux autoremove` | Remove every installed package that was pulled in only as a dependency and is no longer needed by anything. |
 | `flux search <term>` | Search the recipe repository by name or description. |
@@ -44,6 +44,12 @@ Install a package, skipping the confirmation prompt:
 
 ```sh
 flux install -y ripgrep
+```
+
+Install several packages together. Dependencies are resolved and shown as one combined list, and every source that needs downloading is fetched behind a single shared progress bar instead of one per package:
+
+```sh
+flux install ripgrep fd bat
 ```
 
 Check what a package actually is before installing it:

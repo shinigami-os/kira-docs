@@ -15,11 +15,13 @@ flux is Kira's package manager: a single C binary with no runtime dependencies b
 ## Installing and removing packages
 
 ```sh
-flux install <package>
+flux install <package>...
 flux remove <package>
 ```
 
-Installing resolves dependencies first, shows you the full list with versions, and asks for confirmation before doing anything (skip the prompt with `-y`). Removing deletes exactly the files that package installed, nothing more and nothing less, because flux tracks them precisely.
+`flux install` takes one or more package names at once. Dependencies for all of them are resolved together into a single deduplicated list, shown with versions, and confirmed once (skip the prompt with `-y`). Every source that needs a fresh download is then fetched behind one shared progress bar before anything is built or installed, rather than one bar per package. Removing deletes exactly the files that package installed, nothing more and nothing less, because flux tracks them precisely.
+
+Installing a package that is already present but whose recipe has moved on to a newer version upgrades it automatically, no extra flag needed. `-f` is only needed to force a rebuild at the version already installed, useful when a recipe's build steps changed without a version bump.
 
 Packages pulled in only as a dependency are marked as auto-installed. If nothing depends on them anymore, `flux autoremove` (or `flux remove -a <package>`) cleans them up:
 

@@ -18,7 +18,13 @@ Ordinary packages update the same way they install:
 flux install <package>
 ```
 
-Reinstalling an already-installed package with a newer recipe pulls the newer version. There is no separate "upgrade" command for individual packages.
+If the recipe's version has moved past what's installed, this rebuilds and replaces it automatically, no extra flag needed. If it's already at the current version, flux just confirms that and exits; `-f` forces a rebuild anyway, which only matters when a recipe's build steps changed without a version bump. There is no separate "upgrade" command for individual packages, and no need to `flux remove` first.
+
+Several packages can be updated in one command the same way they're installed together:
+
+```sh
+flux install ripgrep fd bat
+```
 
 ## Updating flux itself
 

@@ -58,6 +58,10 @@ make DESTDIR=$DESTDIR install
 | `license` | An SPDX license identifier. |
 | `size` | Approximate installed size in megabytes, integer only. |
 
+::: warning Bump `version` for any build-affecting change
+A package's binary cache key is derived from `name`, `version`, and `cflags`, **not** from the recipe body. Editing a hook, a `%build` flag, or a patch without bumping `version` means the existing cached artifact, built from the *old* recipe, keeps being served indefinitely: `flux install` on a machine that already has it cached never rebuilds, since nothing about the cache key changed. This has caused real, silent breakage that went unnoticed until someone happened to force a rebuild. If a change affects what gets built or how, bump `version` (a trailing `.1`, `.2`, etc. is fine for a packaging-only change with no real upstream release) so the fix actually reaches anyone with a stale cache hit.
+:::
+
 **`[source]`**: normally a direct tarball URL and its SHA-256 checksum. Leave both empty to make a [meta-package](#meta-packages). Two other forms are accepted:
 
 - **`git+<repo>#<ref>`**: shallow-cloned instead of downloaded as a tarball. If `<ref>` is a floating branch rather than a tag, `sha256` is repurposed to hold a pinned commit hash instead of a checksum, so the build stays reproducible even though the branch itself moves.
