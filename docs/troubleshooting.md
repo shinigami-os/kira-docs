@@ -23,27 +23,23 @@ sudo usermod -aG video $(whoami)
 
 Log out and back in for the new group membership to take effect.
 
-## The desktop stops rendering after installing a compiler toolchain
+## A package refuses to install over one with the same name
 
-Kira's desktop environments link against musl. Installing `gcc` or `binutils` on a desktop install pulls in their own compiler runtime libraries, which are built against glibc, not musl. If those land in `/usr/lib` alongside the musl-native versions the desktop depends on, dynamic linking can pick up the wrong one and the compositor fails to start.
-
-Neither package is needed at runtime on an installed system, they are only relevant if you intend to build software directly on Kira itself. If you do not need them installed system-wide, remove them:
-
-```sh
-flux remove gcc binutils
-```
+`gcc`, `binutils`, and most other development tools resolve against Alpine, which is musl-native by construction, so they no longer carry the glibc-runtime-library conflicts an older Kira install might remember. What flux does still refuse is installing an Alpine package under a name already tracked from a *different* source (kotodama's own `musl` versus Alpine's `musl`, for example) - this is intentional, not a bug, and exists specifically to stop one source from silently overwriting a file the other source owns. The error names both the package and its current source; `-f` overrides it if you are certain, with a loud warning even then.
 
 ## flux reports a network error during install
 
-flux treats network failures during a remote cache lookup as a cache miss, not a hard error, and falls back to building the package from source automatically. If you see a genuine failure at this point, it usually means the build itself failed, not the network. Check the build output for the actual failing step.
+For a kotodama (`kira-*`) package, flux treats network failures during a remote cache lookup as a cache miss, not a hard error, and falls back to building the package from source automatically. If you see a genuine failure at this point, it usually means the build itself failed, not the network. Check the build output for the actual failing step.
+
+An Alpine package has no such fallback, since there is nothing to build locally - a network error fetching its index or its `.apk` is a hard failure, and re-running `flux update` (to resync the index) or `flux install` (to retry the download) is the only next step.
 
 Installing several packages in one command is an exception to this: every source that needs downloading is fetched up front, before anything is built or installed. If any one of those downloads fails, the whole batch stops right there, nothing gets built or installed, rather than silently continuing with the packages that did succeed. Just re-run the same command, packages already fetched or installed are skipped.
 
 ## Reinstalling a package that says it's already installed
 
-`flux install <package>` only reports "already installed" and exits when the package is present **and** already at the recipe's current version. If a newer recipe version exists, it rebuilds automatically, no extra step needed.
+`flux install <package>` only reports "already installed" and exits when the package is present **and** already at the current version - the recipe's version for a `kira-*` package, or the Alpine index's version for anything else. If a newer version exists, it upgrades automatically, no extra step needed.
 
-Seeing "already installed" for a package you know just changed usually means the local recipe repository is stale, run `flux update` first to sync it. If the version genuinely hasn't changed and you want to force a rebuild anyway (for example, to pick up a build-step change that didn't come with a version bump), use `-f`:
+Seeing "already installed" for a package you know just changed usually means flux hasn't synced yet, run `flux update` first (this refreshes both the kotodama recipe repo and the Alpine index). If the version genuinely hasn't changed and you want to force a reinstall anyway (for example, to pick up a kotodama build-step change that didn't come with a version bump), use `-f`:
 
 ```sh
 flux install -f <package>

@@ -17,7 +17,7 @@ Most distributions ask you to trust them. Kira asks you to understand it instead
 These are deliberate scope limits, not gaps waiting to be filled.
 
 - **Not a beginner distribution.** The installer is guided, but it expects you to know what a partition is.
-- **Not a Debian fork.** Kira's base system is fully independent. A Debian compatibility container exists as a fallback for the rare package that has nowhere else to come from, not as a foundation.
+- **Not a Debian fork, and not Alpine either.** Kira's base system is fully independent. flux resolves anything without a `kira-` prefix against Alpine's package index for practical reach, but Kira's own bootstrap layer and software are built and maintained on their own terms, not derived from Alpine.
 - **Not systemd.** [runit](/architecture/init-system) is the init system. This is non-negotiable.
 - **Not a desktop-first operating system.** The desktop environment is included and polished, but the terminal is always the primary interface.
 - **Not a gaming distribution.** Steam runs through Flatpak, but Kira is not tuned around gaming. Anything that works there is a side effect, not a goal.

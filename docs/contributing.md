@@ -7,14 +7,16 @@ Kira is organized as a small set of focused repositories under the [`shinigami-o
 | `shinigami` | The Linux kernel fork and its patches | GPL-2.0 |
 | `kira-base` | The minimal bootstrap layer | GPL-2.0 |
 | `flux` | The package manager itself | GPL-2.0 |
-| `flux-recipes` | Every kotodama recipe | GPL-2.0 |
+| `flux-recipes` | kotodama recipes for Kira's own (`kira-*`) packages | GPL-2.0 |
 | `kira-desktop` | Desktop environment configuration | MIT |
 | `kira-installer` | The live ISOs and the installer | GPL-2.0 |
 | `kira-docs` | This documentation | MIT |
 
 ## Adding a package
 
-The most approachable way to contribute is a new kotodama recipe in `flux-recipes`. See [Writing a kotodama Recipe](/flux/kotodama-recipes) for the format, then open a pull request. Recipes are reviewed before merge against a short, fixed set of rules: a real checksum, a direct source URL, a directory name matching the package name, and hooks that install into `$DESTDIR` rather than the live filesystem.
+Most software does not need a recipe at all: flux resolves any name without a `kira-` prefix directly against Alpine's package index, so if Alpine already carries what you want, there is nothing to contribute here.
+
+A kotodama recipe in `flux-recipes` only makes sense for genuinely Kira-specific software - a new meta-package bundling a few Alpine dependencies with some Kira configuration, or a real from-source build for the rare thing Alpine doesn't carry. Either way the package name must start with `kira-`. See [Writing a kotodama Recipe](/flux/kotodama-recipes) for the format, then open a pull request. Recipes are reviewed before merge against a short, fixed set of rules: a `kira-`-prefixed directory name matching the package name, a real checksum, a direct source URL, and hooks that install into `$DESTDIR` rather than the live filesystem.
 
 ## Kernel patches
 

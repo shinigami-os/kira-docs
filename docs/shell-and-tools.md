@@ -20,7 +20,7 @@ Core development tools ship in the desktop image, there is no lengthy setup pass
 Whole language toolchains are one flux install away, as **devkits**:
 
 ```sh
-flux install devkit-rust
+flux install kira-devkit-rust
 ```
 
 ```
@@ -28,7 +28,7 @@ flux install devkit-rust
 ✓ ready to code.
 ```
 
-Devkits exist for the common languages, including `devkit-c`, `devkit-go`, and `devkit-python`, each bundling the compiler or interpreter, a language server, and the tools you would normally install one at a time.
+Devkits exist for the common languages, including `kira-devkit-c`, `kira-devkit-go`, and `kira-devkit-python`, each bundling the compiler or interpreter, a language server, and the tools you would normally install one at a time.
 
 ## Base developer tools
 

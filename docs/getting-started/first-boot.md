@@ -7,13 +7,13 @@
 
 ## Update the system
 
-The very first thing worth doing on any fresh install is bringing flux's recipe repository up to date:
+The very first thing worth doing on any fresh install is bringing flux's package sources up to date:
 
 ```sh
 flux update
 ```
 
-This syncs the local recipe repository with the remote one and checks whether a newer flux, kira-base, or kernel release is available. It never installs anything on its own, it only tells you what is available. See [Updating Kira](/flux/updating) for the full picture.
+This syncs the local kotodama recipe repository and the Alpine package index, and checks whether a newer flux, kira-base, or kernel release is available. It never installs anything on its own, it only tells you what is available. See [Updating Kira](/flux/updating) for the full picture.
 
 ## Look around
 
@@ -35,7 +35,7 @@ Lists every package currently installed. Add `-a` to include packages that were 
 flux search <term>
 ```
 
-Searches the recipe repository. Useful for checking whether something you want is already packaged before reaching for the Debian compatibility path.
+Searches kotodama recipes only, so it only ever turns up `kira-*` packages. Most software has no recipe at all - it installs straight from Alpine by its plain name, so if `flux search` comes up empty, just try `flux install <name>` directly before assuming it isn't packaged.
 
 ## Install what you need
 
@@ -45,7 +45,7 @@ Kira's base install is intentionally minimal. Whatever you need beyond the defau
 flux install <package>
 ```
 
-If you write code, look at the `devkit-*` packages, they bundle a whole language toolchain in one install. See [Shell and Developer Tools](/shell-and-tools) for details.
+If you write code, look at the `kira-devkit-*` packages, they bundle a whole language toolchain in one install. See [Shell and Developer Tools](/shell-and-tools) for details.
 
 ## Inspect what is running
 

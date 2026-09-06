@@ -8,8 +8,9 @@ Kira is built in layers, and the boundary between them is deliberate: a small, f
 │     Sleex or SwayFX  ·  ZSH  ·  dev tools    │
 ├─────────────────────────────────────────────┤
 │                     flux                     │
-│  kotodama recipes · binary cache · Debian    │
-│                  compat container            │
+│   kotodama recipes (kira-*) · binary cache   │
+│      · Alpine package index (everything      │
+│                    else)                     │
 ├─────────────────────────────────────────────┤
 │                Core Userland                 │
 │      musl libc · runit · BusyBox             │
@@ -42,7 +43,7 @@ Nothing on Kira lives in a format meant to be edited only by a tool. A few locat
 | Path | What it holds |
 |---|---|
 | `/var/lib/flux/installed/<package>/` | Per-package metadata and the exact list of files it installed. |
-| `/var/cache/flux/` | The local binary cache. |
+| `/var/cache/flux/` | The local binary cache, plus the synced Alpine package index under `alpine/`. |
 | `/etc/flux/flux.conf` | flux's own configuration, plain `key = value` text. |
 | `/etc/sv/` | runit service definitions. |
 | `/proc/config.gz` | The running kernel's build configuration, always inspectable. |
