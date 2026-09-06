@@ -28,7 +28,7 @@ export default defineConfig({
       { text: 'Guide', link: '/introduction' },
       { text: 'flux', link: '/flux/overview' },
       { text: 'Desktop', link: '/desktop/overview' },
-      { text: 'kira-linux.com', link: 'https://kira-linux.com' },
+      { text: 'kira-linux.com', link: 'https://kira-linux.com', target: '_self' },
     ],
 
     sidebar: [
