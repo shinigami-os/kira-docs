@@ -41,6 +41,8 @@ sync
 
 Boot from the USB drive (most machines let you pick a one-time boot device with a key like F12, F10, or Esc at power-on, check your motherboard or laptop's documentation if you are not sure). The console ISO drops you at a shell with `kira-install` available. The desktop ISO boots into a live Sleex session, open a terminal and run `kira-install` from there.
 
+The live session user is `kira`, password `kira`.
+
 ## Running the installer
 
 `kira-install` is a guided, text-based installer. It expects you to know what a partition is, it will not hand-hold you through disk concepts, but every prompt is a plain question with a small number of choices.
