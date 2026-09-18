@@ -43,6 +43,7 @@ export default defineConfig({
         items: [
           { text: 'Installation', link: '/getting-started/installation' },
           { text: 'First Boot', link: '/getting-started/first-boot' },
+          { text: 'Virtual Machines', link: '/getting-started/virtual-machines' },
         ],
       },
       {
