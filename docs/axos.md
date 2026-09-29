@@ -1,14 +1,26 @@
 # Kira x AxOS
 
-Not a merger, not a deal. Two friends sharing what they built: trading tools to make the best Linux experience possible. That's the whole story.
+Not a merger, not a deal. Two people who happen to build in different places on the same stack, comparing notes because that's just what you do when someone else is solving problems you'd otherwise be stuck on alone.
 
-## Kira provides
+OxoGhost lives mostly below the surface: kernel, package manager, boot process, the parts nobody thinks about until they break. Ardox lives mostly above it: the desktop, the shell, the parts you actually look at all day.
 
-**Sleex**, the primary desktop. The elegant desktop AxOS is known for, shipped as a first-class Kira desktop. See [Sleex](/desktop/sleex).
+Every so often that turns into something both projects get to keep.
 
-## AxOS provides
+## AxOS
 
-**A custom bootloader**, being built for both projects. What makes it special is a story for another day. Status: under heavy development.
+Arch underneath, Material 3 Expressive on top.
+
+Not a theme pack and three GNOME extensions called a revolution. Every piece is there because Ardox chose it, on purpose.
+
+Install, and be done.
+
+## Kira
+
+Built from source, musl underneath.
+
+Made so a developer can read every layer of the system instead of trusting it blindly.
+
+A Linux distribution you actually understand.
 
 ## Links
 
