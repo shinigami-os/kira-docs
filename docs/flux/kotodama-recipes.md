@@ -91,7 +91,7 @@ Always install into `$DESTDIR` in `%install`, never write directly to `/`.
 
 A recipe with an empty `[source]` is a meta-package: just a dependency list over real Alpine packages, optionally with a small `%install` (drop a few config files) or `%post-install` (create a user or a runit service). Meta-packages never touch the binary cache, and every install re-runs their hooks fresh, which is what lets one pick up a new dependency or a configuration change without a version bump. This is the shape most `kira-*` recipes actually take.
 
-If a meta-package's `%install` or `%post-install` needs files that live in another git repository, like a desktop configuration repository, pull them with `git clone` or `curl` inside `%build`, into the scratch build directory. Do not check a static copy into `files/`, it will drift out of sync with its real source of truth. Kira's own `kira-desktop-*` packages follow this pattern: each clones the `kira-desktop` repository and copies out of its own desktop-environment folder plus the shared scripts directory.
+If a meta-package's `%install` or `%post-install` needs files that live in another git repository, like a desktop configuration repository, pull them with `git clone` or `curl` inside `%build`, into the scratch build directory. Do not check a static copy into `files/`, it will drift out of sync with its real source of truth.
 
 ## Contributing a recipe
 
