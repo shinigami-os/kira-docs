@@ -14,7 +14,7 @@ Kira ships two live ISO variants. Both install either tier, the difference is on
 | ISO | Size | Boots into | Can install |
 |---|---|---|---|
 | `kira-console.iso` | ~220 MB | An interactive shell | Server or desktop tier |
-| `kira-desktop-<DE>.iso` | ~900 MB | A full Sleex or SwayFX session, try-before-install | Desktop tier |
+| `kira-desktop-<DE>.iso` | ~900 MB | A full Sleex session, try-before-install | Desktop tier |
 
 If you already know you want the server tier, or you are comfortable installing over SSH, the console ISO is smaller and faster to write. If you want to try the desktop before committing to it, use the desktop ISO.
 
@@ -49,7 +49,7 @@ The live session user is `kira`, password `kira`.
 
 1. **Partitioning.** Two modes are available: wipe the whole disk (creates a GPT layout with a 512 MB FAT32 EFI system partition, an optional swap partition, and an ext4 root partition), or install into existing free space. Manual partitioning is not available yet.
 2. **Tier.** Choose `server` or `desktop`. Server gives you the base system, runit, ZSH, flux, and SSH, with no display server. Desktop adds the full graphics stack.
-3. **Desktop environment.** Desktop tier only. Choose Sleex, the primary desktop, or SwayFX, the second choice.
+3. **Desktop environment.** Desktop tier only. Choose Sleex.
 4. **User setup.** Set a root password, then create your own user account and password.
 5. **Bootloader.** The installer runs `grub-install` and generates a GRUB configuration inside the new system automatically.
 

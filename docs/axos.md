@@ -31,4 +31,4 @@ A Linux distribution you actually understand.
 ## Where to go next
 
 - [Sleex](/desktop/sleex), for the desktop environment itself.
-- [Desktop Overview](/desktop/overview), for how it fits alongside SwayFX.
+- [Desktop Overview](/desktop/overview), for how it fits into Kira.

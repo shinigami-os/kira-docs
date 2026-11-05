@@ -67,7 +67,6 @@ export default defineConfig({
         items: [
           { text: 'Overview', link: '/desktop/overview' },
           { text: 'Sleex', link: '/desktop/sleex' },
-          { text: 'SwayFX', link: '/desktop/swayfx' },
         ],
       },
       {

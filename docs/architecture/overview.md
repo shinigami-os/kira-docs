@@ -5,7 +5,7 @@ Kira is built in layers, and the boundary between them is deliberate: a small, f
 ```
 ┌─────────────────────────────────────────────┐
 │                 Desktop / Shell              │
-│     Sleex or SwayFX  ·  ZSH  ·  dev tools    │
+│         Sleex  ·  ZSH  ·  dev tools          │
 ├─────────────────────────────────────────────┤
 │                     flux                     │
 │   kotodama recipes (kira-*) · binary cache   │

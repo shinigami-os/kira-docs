@@ -24,7 +24,7 @@ Shinigami's patch philosophy is minimal diff from upstream, and every patch need
 
 ## Desktop configuration
 
-`kira-desktop` ships default configuration for Sleex and SwayFX. Every file in it is meant to be read and modified, contributions that keep configuration plain, commented where it is not self-explanatory, and free of unexplained magic are the easiest to review and merge.
+Sleex's default configuration is upstream's own `sleex-user-config`. Kira-only changes to it live as small build-time patches in the `kira-sleex` and `kira-desktop-sleex` recipes in `flux-recipes`, so a fix that every Sleex user would want belongs upstream in Sleex instead.
 
 ## General workflow
 

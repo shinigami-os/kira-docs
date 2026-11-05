@@ -29,7 +29,7 @@ features:
   - title: flux, a package manager you can hold in your head
     details: One C binary, no runtime dependencies beyond libc. Reproducible builds, a binary cache for speed, and source recipes for control.
   - title: Wayland desktop, terminal-first
-    details: Sleex is the primary desktop, with SwayFX as the second choice. The terminal always stays the primary interface.
+    details: Sleex is the desktop. The terminal always stays the primary interface.
   - title: Ready to code on first boot
     details: Core developer tools ship in the desktop image. Whole language toolchains are one flux devkit away.
 ---

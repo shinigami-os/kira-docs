@@ -55,10 +55,6 @@ Because Kira is transparent by default, nothing about the running system is hidd
 - runit services live under `/etc/sv/`, and `sv status /etc/sv/<name>` tells you exactly what is running. See [Init System](/architecture/init-system).
 - The running kernel configuration is inspectable at `/proc/config.gz`.
 
-## Switching desktop environments
-
-If you installed the desktop tier, you are not locked into the desktop environment you picked during installation. See [Desktop Overview](/desktop/overview) for how to install and switch between Sleex and SwayFX.
-
 ## Where to go from here
 
 - [flux command reference](/flux/commands), for the full package manager toolkit.

@@ -32,7 +32,6 @@ Kira is split across a small number of focused components, each with a clear job
 | **Shinigami** | The Linux kernel fork Kira ships. See [Shinigami](/kernel). |
 | **kira-base** | The minimal bootstrap layer: musl, BusyBox, runit, and just enough to reach a shell and run flux. See [System Overview](/architecture/overview). |
 | **flux** | The package manager. Everything above the bootstrap layer is installed through it. See [flux](/flux/overview). |
-| **kira-desktop** | Desktop environment configuration for Sleex and SwayFX. See [Desktop](/desktop/overview). |
 | **kira-installer** | The live ISOs and the guided installer. See [Installation](/getting-started/installation). |
 
 Every one of these lives in its own repository under the `shinigami-os` organization, and every one of them is meant to be read.

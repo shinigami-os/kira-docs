@@ -23,6 +23,5 @@ Sleex's configuration lives under `~/.config/` like any Hyprland-based setup, an
 
 ## Where to go next
 
-- [Desktop Overview](/desktop/overview), for how Sleex fits alongside SwayFX.
-- [SwayFX](/desktop/swayfx), the second choice desktop.
+- [Desktop Overview](/desktop/overview), for how Sleex fits into Kira.
 - [Kira x AxOS](/axos), for how Sleex came to be part of Kira.

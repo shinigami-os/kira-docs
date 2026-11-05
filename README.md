@@ -22,7 +22,6 @@ docs/
   desktop/
     overview.md
     sleex.md
-    swayfx.md
   shell-and-tools.md
   kernel.md                        Shinigami
   axos.md                          Kira x AxOS
