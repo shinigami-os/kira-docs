@@ -21,7 +21,7 @@ hero:
 
 features:
   - title: Rolling release, not rolling breakage
-    details: Packages enter the repo only after validation. flux update brings an installed system fully up to date, on your terms.
+    details: Packages enter the repo only after validation. flux check and flux upgrade bring an installed system fully up to date, on your terms.
   - title: Transparent by default
     details: Every flux operation tells you exactly what it is doing and why. Configs are plain text meant to be read, not generated and hidden.
   - title: A lean, legible core
@@ -29,7 +29,7 @@ features:
   - title: flux, a package manager you can hold in your head
     details: One C binary, no runtime dependencies beyond libc. Reproducible builds, a binary cache for speed, and source recipes for control.
   - title: Wayland desktop, terminal-first
-    details: Sleex is the desktop. The terminal always stays the primary interface.
+    details: The Line is Kira's own desktop, a Quickshell shell on Hyprland. The terminal always stays the primary interface.
   - title: Ready to code on first boot
     details: Core developer tools ship in the desktop image. Whole language toolchains are one flux devkit away.
 ---

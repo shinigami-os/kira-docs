@@ -66,6 +66,7 @@ export default defineConfig({
         text: 'Desktop',
         items: [
           { text: 'Overview', link: '/desktop/overview' },
+          { text: 'The Line', link: '/desktop/the-line' },
           { text: 'Sleex', link: '/desktop/sleex' },
         ],
       },

@@ -5,7 +5,7 @@ Kira is built in layers, and the boundary between them is deliberate: a small, f
 ```
 ┌─────────────────────────────────────────────┐
 │                 Desktop / Shell              │
-│         Sleex  ·  ZSH  ·  dev tools          │
+│      The Line · Sleex · ZSH · dev tools      │
 ├─────────────────────────────────────────────┤
 │                     flux                     │
 │   kotodama recipes (kira-*) · binary cache   │
@@ -50,9 +50,9 @@ Nothing on Kira lives in a format meant to be edited only by a tool. A few locat
 
 ## Versioning
 
-Kira does not use traditional operating system version numbers. Individual components (flux, kira-base, kira-desktop) share a single release scheme: `YY.MM`, with an optional `-N` suffix for a hotfix release within that month. `26.06`, then `26.06-1` for the first hotfix, and so on. The Shinigami kernel follows a related but distinct scheme, see [Shinigami](/kernel).
+Kira does not use traditional operating system version numbers. Individual components (flux, kira-base, The Line) share a single release scheme: `YY.MM`, with an optional `-N` suffix for a hotfix release within that month. `26.06`, then `26.06-1` for the first hotfix, and so on. The Shinigami kernel follows a related but distinct scheme, see [Shinigami](/kernel).
 
-Cutting a release of any of these components is just a git tag, there is no separate release object to keep in sync. `flux update` checks each component's tags against what is installed and tells you when something newer is available.
+Cutting a release of any of these components is just a git tag, there is no separate release object to keep in sync. `flux sys check` checks each component's tags against what is installed and tells you when something newer is available.
 
 ## Where to go next
 

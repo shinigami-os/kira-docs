@@ -33,12 +33,13 @@ Kira is split across a small number of focused components, each with a clear job
 | **kira-base** | The minimal bootstrap layer: musl, BusyBox, runit, and just enough to reach a shell and run flux. See [System Overview](/architecture/overview). |
 | **flux** | The package manager. Everything above the bootstrap layer is installed through it. See [flux](/flux/overview). |
 | **kira-installer** | The live ISOs and the guided installer. See [Installation](/getting-started/installation). |
+| **The Line** | Kira's own desktop shell, built on Hyprland and Quickshell. See [The Line](/desktop/the-line). |
 
 Every one of these lives in its own repository under the `shinigami-os` organization, and every one of them is meant to be read.
 
 ## Release model
 
-Kira has no traditional version numbers for the operating system itself. Packages are always at their latest validated version, and `flux update` brings an installed system fully up to date whenever you choose to run it. Live ISOs are snapshotted periodically and dated, so you always have a recent, known-good starting point, but an existing install never needs to be reinstalled to stay current.
+Kira has no traditional version numbers for the operating system itself. Packages are always at their latest validated version, and `flux check` and `flux upgrade` bring an installed system fully up to date whenever you choose to run them. Live ISOs are snapshotted periodically and dated, so you always have a recent, known-good starting point, but an existing install never needs to be reinstalled to stay current.
 
 ## Where to go next
 

@@ -17,10 +17,11 @@ docs/
   flux/
     overview.md
     commands.md                   Command reference
-    updating.md                   flux update / base-update / kernel-update / self-update
+    updating.md                   flux check / upgrade / sys
     kotodama-recipes.md           Writing a kotodama recipe
   desktop/
     overview.md
+    the-line.md
     sleex.md
   shell-and-tools.md
   kernel.md                        Shinigami

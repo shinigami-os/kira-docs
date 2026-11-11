@@ -1,13 +1,13 @@
 # Shinigami
 
-Shinigami is the Linux kernel fork that powers Kira, based on a longterm upstream release and patched for developer workloads on x86-64.
+Shinigami is the Linux kernel fork that powers Kira, based on the latest stable upstream release and patched for developer workloads on x86-64.
 
 ## Versioning
 
 Shinigami releases follow a two-part scheme:
 
 ```
-7.1.3-shinigami-26.08-3
+7.3.1-shinigami-26.11-1
 ```
 
 - **`LINUX_VERSION`**, the upstream Linux version this release is based on.
@@ -30,7 +30,7 @@ Patches are organized by category and every one has a documented reason, minimal
 | `sec/` | Security hardening |
 | `compat/` | Hardware compatibility fixes |
 
-`perf/` and `compat/` are the categories currently carrying patches, `mem/` and `sec/` are reserved for when a patch needs them.
+`perf/` and `compat/` are the categories currently carrying patches, `mem/` and `sec/` are reserved for when a patch needs them. The `compat/` patches today are `acpi_call` (direct ACPI method calls for laptop tooling) and the TUXEDO drivers for Clevo laptops: the keyboard backlight and its Fn keys, `tuxedo_io`, and the ITE RGB keyboards. The Clevo drivers refuse boards they do not know, so a Clevo model outside TUXEDO's own list has to be added to the compatibility check before they load.
 
 ## Inspecting the running kernel
 
@@ -45,7 +45,7 @@ No need to trust a changelog, the running configuration is right there.
 ## Updating
 
 ```sh
-flux kernel-update
+flux sys upgrade kernel
 ```
 
 Downloads and verifies the latest signed Shinigami kernel, extracts it, and regenerates the GRUB configuration. Like any kernel update, this takes effect on the next reboot. See [Updating Kira](/flux/updating) for the full picture.

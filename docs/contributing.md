@@ -8,7 +8,7 @@ Kira is organized as a small set of focused repositories under the [`shinigami-o
 | `kira-base` | The minimal bootstrap layer | GPL-2.0 |
 | `flux` | The package manager itself | GPL-2.0 |
 | `flux-recipes` | kotodama recipes for Kira's own (`kira-*`) packages | GPL-2.0 |
-| `kira-desktop` | Kira's own desktop shell, in progress | MIT |
+| `the-line` | The Line, Kira's own desktop shell | GPL-3.0 |
 | `kira-installer` | The live ISOs and the installer | GPL-2.0 |
 | `kira-docs` | This documentation | MIT |
 
@@ -24,7 +24,7 @@ Shinigami's patch philosophy is minimal diff from upstream, and every patch need
 
 ## Desktop configuration
 
-Sleex's default configuration is upstream's own `sleex-user-config`. Kira-only changes to it live as small build-time patches in the `kira-sleex` and `kira-desktop-sleex` recipes in `flux-recipes`, so a fix that every Sleex user would want belongs upstream in Sleex instead.
+The Line is its own repository, `the-line`; its recipe, `kira-the-line`, only fetches and installs it, so changes to the shell go there. Sleex's default configuration is upstream's own `sleex-user-config`. Kira-only changes to it live as small build-time patches in the `kira-sleex` and `kira-desktop-sleex` recipes in `flux-recipes`, so a fix that every Sleex user would want belongs upstream in Sleex instead.
 
 ## General workflow
 

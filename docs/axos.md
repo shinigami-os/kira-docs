@@ -30,5 +30,6 @@ A Linux distribution you actually understand.
 
 ## Where to go next
 
-- [Sleex](/desktop/sleex), for the desktop environment itself.
+- [Sleex](/desktop/sleex), for the AxOS desktop on Kira.
+- [The Line](/desktop/the-line), for Kira's own desktop.
 - [Desktop Overview](/desktop/overview), for how it fits into Kira.

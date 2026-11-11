@@ -27,7 +27,7 @@ sv down /etc/sv/<name>      # stop it, and keep it stopped
 sv restart /etc/sv/<name>   # restart it
 ```
 
-Some Kira services are **oneshot**: they run once, do their job, and then intentionally stay down until the next boot. They mark this by creating a `down` file in their own service directory after finishing. Trying to `sv up` a oneshot service after it has already run for the current boot is generally not useful, it exists to do one thing early in boot, not to be supervised continuously.
+Some Kira services are **oneshot**: they run once, do their job, and then intentionally stay down until the next boot. They end their `run` script by creating a `down` file in their own service directory and then telling runit to stop supervising them with `sv d`. The `sv d` is the part that matters: runit only reads the `down` file when it starts a service, so a script that merely creates the file is started again as soon as it exits. Trying to `sv up` a oneshot service after it has already run for the current boot is generally not useful, it exists to do one thing early in boot, not to be supervised continuously.
 
 ## Boot sequence
 

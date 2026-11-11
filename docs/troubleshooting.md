@@ -31,7 +31,7 @@ Log out and back in for the new group membership to take effect.
 
 For a kotodama (`kira-*`) package, flux treats network failures during a remote cache lookup as a cache miss, not a hard error, and falls back to building the package from source automatically. If you see a genuine failure at this point, it usually means the build itself failed, not the network. Check the build output for the actual failing step.
 
-An Alpine package has no such fallback, since there is nothing to build locally - a network error fetching its index or its `.apk` is a hard failure, and re-running `flux update` (to resync the index) or `flux install` (to retry the download) is the only next step.
+An Alpine package has no such fallback, since there is nothing to build locally - a network error fetching its index or its `.apk` is a hard failure, and re-running `flux check` (to resync the index) or `flux install` (to retry the download) is the only next step.
 
 Installing several packages in one command is an exception to this: every source that needs downloading is fetched up front, before anything is built or installed. If any one of those downloads fails, the whole batch stops right there, nothing gets built or installed, rather than silently continuing with the packages that did succeed. Just re-run the same command, packages already fetched or installed are skipped.
 
@@ -39,7 +39,7 @@ Installing several packages in one command is an exception to this: every source
 
 `flux install <package>` only reports "already installed" and exits when the package is present **and** already at the current version - the recipe's version for a `kira-*` package, or the Alpine index's version for anything else. If a newer version exists, it upgrades automatically, no extra step needed.
 
-Seeing "already installed" for a package you know just changed usually means flux hasn't synced yet, run `flux update` first (this refreshes both the kotodama recipe repo and the Alpine index). If the version genuinely hasn't changed and you want to force a reinstall anyway (for example, to pick up a kotodama build-step change that didn't come with a version bump), use `-f`:
+Seeing "already installed" for a package you know just changed usually means flux hasn't synced yet, run `flux check` first (this refreshes both the kotodama recipe repo and the Alpine index). If the version genuinely hasn't changed and you want to force a reinstall anyway (for example, to pick up a kotodama build-step change that didn't come with a version bump), use `-f`:
 
 ```sh
 flux install -f <package>

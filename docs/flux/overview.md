@@ -61,7 +61,7 @@ alpine_mirror_url = https://dl-cdn.alpinelinux.org/alpine
 alpine_branch = edge
 ```
 
-`alpine_mirror_url`/`alpine_branch` default to Alpine's own CDN and the `edge` branch if left unset - set `alpine_branch = stable` to track Alpine's stable branch instead. There is no equivalent option for the kotodama recipe repo's branch: `flux update` always follows `flux-recipes`' GitHub default branch.
+`alpine_mirror_url`/`alpine_branch` default to Alpine's own CDN and the `edge` branch if left unset - set `alpine_branch = stable` to track Alpine's stable branch instead. There is no equivalent option for the kotodama recipe repo's branch: `flux check` always follows `flux-recipes`' GitHub default branch.
 
 `flux_secret_key_path` only matters on a machine that publishes packages to the cache. On an ordinary Kira install, it does not need to exist, flux simply skips cache signing and storage instead of failing.
 
