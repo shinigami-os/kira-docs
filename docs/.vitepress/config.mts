@@ -23,7 +23,7 @@ export default defineConfig({
 
   themeConfig: {
     logo: '/assets/kira-logo-light.png',
-    siteTitle: 'kira / docs',
+    siteTitle: 'Kira',
 
     nav: [
       { text: 'Guide', link: '/introduction' },
@@ -35,9 +35,7 @@ export default defineConfig({
     sidebar: [
       {
         text: 'Introduction',
-        items: [
-          { text: 'What is Kira Linux', link: '/introduction' },
-        ],
+        items: [{ text: 'What is Kira Linux', link: '/introduction' }],
       },
       {
         text: 'Getting Started',
@@ -93,6 +91,9 @@ export default defineConfig({
 
     search: {
       provider: 'local',
+      options: {
+        translations: { button: { buttonText: 'type to search', buttonAriaLabel: 'Search the docs' } },
+      },
     },
 
     footer: {

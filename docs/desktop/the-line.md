@@ -6,6 +6,18 @@ Three small tiles sit beneath the line, and when you need more they grow into pa
 
 ## What it has
 
+<div class="k-clips">
+  <figure><video src="/assets/the-line/launcher.mp4" poster="/assets/the-line/launcher-poster.webp" muted loop playsinline preload="none"></video><figcaption>Launcher<span>Super</span></figcaption></figure>
+  <figure><video src="/assets/the-line/overview.mp4" poster="/assets/the-line/overview-poster.webp" muted loop playsinline preload="none"></video><figcaption>Workspace overview<span>Super, Super</span></figcaption></figure>
+  <figure><video src="/assets/the-line/notifications.mp4" poster="/assets/the-line/notifications-poster.webp" muted loop playsinline preload="none"></video><figcaption>Notifications and calendar<span>Super+N</span></figcaption></figure>
+  <figure><video src="/assets/the-line/quicksettings.mp4" poster="/assets/the-line/quicksettings-poster.webp" muted loop playsinline preload="none"></video><figcaption>Quick settings<span>Super+A</span></figcaption></figure>
+  <figure><video src="/assets/the-line/tiling.mp4" poster="/assets/the-line/tiling-poster.webp" muted loop playsinline preload="none"></video><figcaption>Tiling, resize, float<span>Super+R</span></figcaption></figure>
+  <figure><video src="/assets/the-line/fullscreen.mp4" poster="/assets/the-line/fullscreen-poster.webp" muted loop playsinline preload="none"></video><figcaption>Fullscreen and the edge peek<span>Super+F</span></figcaption></figure>
+  <figure><video src="/assets/the-line/wallpapers.mp4" poster="/assets/the-line/wallpapers-poster.webp" muted loop playsinline preload="none"></video><figcaption>Wallpaper picker<span>Super+T</span></figcaption></figure>
+  <figure><video src="/assets/the-line/settings.mp4" poster="/assets/the-line/settings-poster.webp" muted loop playsinline preload="none"></video><figcaption>Settings<span>Super+I</span></figcaption></figure>
+</div>
+
+
 - **A launcher** (tap `Super`) that finds apps, solves sums, runs commands and knows where every setting is. Double-tap `Super` for the workspace overview.
 - **Wallpapers and colours** (`Super+T`): pictures, animated GIFs and videos, for every screen or one. The accent can follow the wallpaper, and GTK and Qt apps wear the same colours.
 - **A settings app** (`Super+I`) with a search over every setting: network, Bluetooth, sound, displays, input, appearance, shortcuts, power, notifications, night light, sign-in, and more.

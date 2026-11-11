@@ -4,6 +4,13 @@ Sleex is the desktop of the AxOS project, brought over to Kira through the [Kira
 
 ## Features
 
+<div class="k-clips">
+  <figure><video src="/assets/sleex/dash.mp4" poster="/assets/sleex/dash-poster.webp" muted loop playsinline preload="none"></video><figcaption>Dashboard<span>Super+D</span></figcaption></figure>
+  <figure><video src="/assets/sleex/overview.mp4" poster="/assets/sleex/overview-poster.webp" muted loop playsinline preload="none"></video><figcaption>Overview</figcaption></figure>
+  <figure><video src="/assets/sleex/dock.mp4" poster="/assets/sleex/dock-poster.webp" muted loop playsinline preload="none"></video><figcaption>Dock</figcaption></figure>
+</div>
+
+
 - Smooth animations throughout the compositor.
 - Tiling window management for keyboard-driven multitasking.
 - An adaptive color scheme that takes its palette from your wallpaper.
