@@ -26,7 +26,7 @@ sudo flux install kira-the-line
 sudo flux install kira-desktop-sleex
 ```
 
-Either one pulls in Hyprland, Quickshell, the login screen and everything it needs, and registers itself as a session at the greeter.
+The installer offers both (and a plain server), so on a new machine you choose one there. Either one pulls in Hyprland, Quickshell, the login screen and everything it needs, and registers itself as a session at the greeter.
 
 ## Where to go next
 

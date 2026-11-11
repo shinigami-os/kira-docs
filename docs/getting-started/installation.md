@@ -3,37 +3,27 @@
 ## System requirements
 
 - **Architecture:** x86-64, with an `x86-64-v2` baseline. This covers almost every machine made after 2010.
-- **Boot mode:** UEFI. The ISOs ship a GRUB EFI binary and expect a GPT disk.
-- **Disk space:** at least 20 GB free for a desktop install, less for a server install. The exact size depends on the packages you add afterward, since Kira installs a minimal base and lets you build up from there with flux.
-- **Memory:** enough to hold the live ISO in RAM. 2 GB is a comfortable minimum for the console ISO, 4 GB or more is recommended for the desktop ISO.
+- **Boot mode:** UEFI. The ISO ships a GRUB EFI binary and expects a GPT disk.
+- **Disk space:** at least 15 GB free for the installer to accept a disk or a free region. The exact size depends on the packages you add afterward, since Kira installs a minimal base and lets you build up from there with flux.
+- **Memory:** the whole installer runs from RAM. 4 GB or more is comfortable.
+- **Network:** the installer installs the packages for your system with flux, so it needs to be online. Ethernet works as soon as it is plugged in, Wi-Fi is set up from the installer.
 
-## Choosing an ISO
+## The ISO
 
-Kira ships two live ISO variants. Both install either tier, the difference is only what the live environment itself boots into.
-
-| ISO | Size | Boots into | Can install |
-|---|---|---|---|
-| `kira-console.iso` | ~220 MB | An interactive shell | Server or desktop tier |
-| `kira-desktop-<DE>.iso` | ~900 MB | A full Sleex session, try-before-install | Desktop tier |
-
-If you already know you want the server tier, or you are comfortable installing over SSH, the console ISO is smaller and faster to write. If you want to try the desktop before committing to it, use the desktop ISO.
-
-The desktop ISO boots Sleex today. The Line is not on an ISO yet: install it after the first boot with `sudo flux install kira-the-line`, and pick it at the login screen.
-
-Both ISOs carry the same minimal core image as the install payload. The installer adds the tier-appropriate flux packages during installation, not from the ISO itself, so the live environment and the installed system stay separate concerns.
+Kira ships one ISO, and it is the installer. It does not boot into a desktop or a shell: it starts a fullscreen installer app straight away, with no login and nothing else to open. The only ways out are rebooting and powering off. The desktop, the shell and every package are installed onto your disk by the installer, so what you end up with is decided by your answers, not by which ISO you downloaded.
 
 ## Downloading
 
-Get the current ISO from [kira-linux.com/install](https://kira-linux.com/install). The install page lets you pick a tier and, for the desktop tier, a desktop environment, then builds the correct filename for you. Older releases are available from the same page.
+Get the ISO from [kira-linux.com/install](https://kira-linux.com/install). Older releases are available from the same page.
 
-Every ISO is signed. If you want to verify a download yourself, matching `.minisig` signature files are published alongside each release.
+Every ISO is signed. If you want to verify a download yourself, the matching `.minisig` signature file is published alongside each release.
 
 ## Writing the ISO to a USB drive
 
 On Linux, with `sdX` replaced by your actual USB device (check with `lsblk` first, writing to the wrong device will destroy its data):
 
 ```sh
-sudo dd if=kira-console.iso of=/dev/sdX bs=4M status=progress conv=fsync
+sudo dd if=kira-<version>-x86_64.iso of=/dev/sdX bs=4M status=progress conv=fsync
 sync
 ```
 
@@ -41,23 +31,26 @@ sync
 
 ## Booting the installer
 
-Boot from the USB drive (most machines let you pick a one-time boot device with a key like F12, F10, or Esc at power-on, check your motherboard or laptop's documentation if you are not sure). The console ISO drops you at a shell with `kira-install` available. The desktop ISO boots into a live Sleex session, open a terminal and run `kira-install` from there.
-
-The live session user is `kira`, password `kira`.
+Boot from the USB drive (most machines let you pick a one-time boot device with a key like F12, F10, or Esc at power-on, check your motherboard or laptop's documentation if you are not sure). The installer opens by itself. If you need to stop, Esc asks whether to power off.
 
 ## Running the installer
 
-`kira-install` is a guided, text-based installer. It expects you to know what a partition is, it will not hand-hold you through disk concepts, but every prompt is a plain question with a small number of choices.
+The installer is a guided app. It expects you to know what a partition is, it will not hand-hold you through disk concepts, but every screen is one plain question with a small number of choices. A ruler along the bottom shows how far along you are. Arrow keys move, a letter picks an option, and the right arrow or Enter goes on.
 
-1. **Partitioning.** Two modes are available: wipe the whole disk (creates a GPT layout with a 512 MB FAT32 EFI system partition, an optional swap partition, and an ext4 root partition), or install into existing free space. Manual partitioning is not available yet.
-2. **Tier.** Choose `server` or `desktop`. Server gives you the base system, runit, ZSH, flux, and SSH, with no display server. Desktop adds the full graphics stack.
-3. **Desktop environment.** Desktop tier only. Choose Sleex. To use The Line, install it afterwards with flux.
-4. **User setup.** Set a root password, then create your own user account and password.
-5. **Bootloader.** The installer runs `grub-install` and generates a GRUB configuration inside the new system automatically.
+1. **Keyboard.** Pick your keyboard layout.
+2. **Network.** Pick Ethernet or a Wi-Fi network and its password.
+3. **Disk.** Pick the disk to install to. The disk the installer booted from is not offered.
+4. **Partitioning.** Two modes are available: wipe the whole disk (creates a GPT layout with a 512 MB FAT32 EFI system partition, an optional swap partition, and an ext4 root partition), or install into the largest free space of an existing disk. Manual partitioning is not available yet.
+5. **Swap.** Choose how much swap, or none.
+6. **Computer name, user and passwords.** Set a hostname, create your own user account and password, and choose whether root shares that password.
+7. **Time zone.**
+8. **System.** Choose **The Line** (Kira's own desktop), **Sleex** (the AxOS desktop) or **Server** (a shell and nothing else). You can add any of the others later with flux.
+9. **Review.** Every answer is listed, and nothing has been written to a disk until you hold the confirm button here.
+10. **Install.** The installer partitions and formats the disk, copies the base system, installs the packages for your system, and installs the GRUB bootloader. If a step fails it undoes its mounts, so you can simply try again.
 
-If you connected to Wi-Fi during the live session before running the installer, that connection carries over to the installed system automatically, no need to reconnect on first boot.
+If you connected to Wi-Fi in the installer, that connection carries over to the installed system automatically, no need to reconnect on first boot.
 
-Once the installer finishes, reboot and remove the USB drive.
+When it says done, remove the USB drive and choose **Reboot**.
 
 ## First boot
 

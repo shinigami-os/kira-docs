@@ -1,6 +1,6 @@
 # Sleex
 
-Sleex is the desktop of the AxOS project, brought over to Kira through the [Kira x AxOS](/axos) collaboration. It is built on [Hyprland](https://hyprland.org/) with [Quickshell](https://quickshell.outfoxxed.me/), and it is the desktop environment the desktop live ISO boots into today. Kira's own desktop is [The Line](/desktop/the-line); the two live side by side and you pick one at the login screen.
+Sleex is the desktop of the AxOS project, brought over to Kira through the [Kira x AxOS](/axos) collaboration. It is built on [Hyprland](https://hyprland.org/) with [Quickshell](https://quickshell.outfoxxed.me/), and it is one of the two systems the installer offers. Kira's own desktop is [The Line](/desktop/the-line); the two live side by side and you pick one at the login screen.
 
 ## Features
 

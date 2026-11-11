@@ -9,7 +9,7 @@ Kira is organized as a small set of focused repositories under the [`shinigami-o
 | `flux` | The package manager itself | GPL-2.0 |
 | `flux-recipes` | kotodama recipes for Kira's own (`kira-*`) packages | GPL-2.0 |
 | `the-line` | The Line, Kira's own desktop shell | GPL-3.0 |
-| `kira-installer` | The live ISOs and the installer | GPL-2.0 |
+| `kira-installer` | The installer and the ISO that boots into it | GPL-2.0 |
 | `kira-docs` | This documentation | MIT |
 
 ## Adding a package

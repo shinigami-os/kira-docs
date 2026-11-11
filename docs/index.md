@@ -31,5 +31,5 @@ features:
   - title: Wayland desktop, terminal-first
     details: The Line is Kira's own desktop, a Quickshell shell on Hyprland. The terminal always stays the primary interface.
   - title: Ready to code on first boot
-    details: Core developer tools ship in the desktop image. Whole language toolchains are one flux devkit away.
+    details: Core developer tools ship with every install. Whole language toolchains are one flux devkit away.
 ---

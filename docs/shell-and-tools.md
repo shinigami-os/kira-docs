@@ -15,7 +15,7 @@ Useful aliases are set up out of the box: navigation shortcuts, `ll` and `la` fo
 
 ## Ready to code on first boot
 
-Core development tools ship in the desktop image, there is no lengthy setup pass required after install before you can start writing code.
+Core development tools ship with every install, there is no lengthy setup pass required after install before you can start writing code.
 
 Whole language toolchains are one flux install away, as **devkits**:
 

@@ -2,8 +2,8 @@
 
 ## What happens
 
-- **Server tier** boots straight to a ZSH shell, logged in as the user you created during installation.
-- **Desktop tier** boots to a graphical login screen (greetd). Log in and it hands off to the desktop environment you chose during installation. There is no separate login manager to configure yourself, it works out of the box.
+- **A server** boots straight to a ZSH shell, logged in as the user you created during installation.
+- **The Line or Sleex** boots to a graphical login screen (greetd). Log in and it hands off to the desktop you chose during installation. There is no separate login manager to configure yourself, it works out of the box.
 
 ## Update the system
 

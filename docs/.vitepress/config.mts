@@ -8,11 +8,12 @@ export default defineConfig({
   lastUpdated: true,
 
   head: [
+    ['meta', { name: 'theme-color', content: '#000000' }],
     ['link', { rel: 'icon', type: 'image/png', href: '/assets/kira-logo.png' }],
     [
       'link',
       {
-        href: 'https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500;600&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap',
         rel: 'stylesheet',
       },
     ],
