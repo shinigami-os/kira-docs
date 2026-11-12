@@ -32,7 +32,7 @@ It runs on one screen or several, with the ten workspaces shared out between the
 sudo flux install kira-the-line
 ```
 
-This installs the shell, its session, the settings app and the programs it relies on. Log out and pick **The Line** in the session list of the login screen. On a system with two desktops installed, the last session you used is offered first.
+This installs the shell, its session, the settings app and the programs it relies on, including [The Line UI](https://github.com/shinigami-os/the-line-ui) (`kira-the-line-ui`): the colours, motion and parts of The Line's design language, a QML module (`TheLine.Ui`) of its own that the shell, its settings and the Kira installer all draw with. Log out and pick **The Line** in the session list of the login screen. On a system with two desktops installed, the last session you used is offered first.
 
 ## Configuration
 
