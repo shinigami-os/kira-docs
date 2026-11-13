@@ -53,6 +53,19 @@ kokuin-cli tui
 
 On a Kira desktop, [kokuin](https://github.com/shinigami-os/kokuin) is the same thing as an app, for those who prefer not to use a terminal. It is installed with the desktop (`kira-kokuin`, through `kira-desktop-apps`) and found in the launcher by typing `kokuin`. It does everything the command does: reading and saving boots, the timeline, comparing two boots, the explanations, and the recorder (each change can be previewed first, and asks for your password only when it is done).
 
+## kokuin: how this machine boots
+
+kokuin follows a boot from the power button to a usable desktop (firmware, bootloader, kernel, initramfs, init, services, session) and explains each step. It comes with every install: `kokuin-cli` on a server, and on a desktop `kokuin` too, its window.
+
+```sh
+sudo kokuin-cli show          # the current boot: chain, stages, milestones, slowest steps
+sudo kokuin-cli timeline      # everything that happened, in order
+kokuin-cli explain            # what each step is, in plain words
+sudo kokuin-cli enable        # record every boot from now on (adds kokuin-init to the kernel command line), then reboot
+```
+
+Without root it still works, but it sees less: the kernel log, the TPM log and some firmware data are readable by root only. Kira's kernel exposes what it reads: the ACPI firmware timings, the TPM measured-boot log, the EFI variables and the process events.
+
 ## Where to go next
 
 - [flux Command Reference](/flux/commands), for installing anything else you need.
