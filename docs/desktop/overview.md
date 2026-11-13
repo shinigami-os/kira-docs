@@ -11,6 +11,10 @@ Kira's desktop is Wayland only, and it is meant to be a tool, not a crutch. The 
 
 The Line is Kira's own desktop, made for it. Sleex is the desktop brought over through the [Kira x AxOS](/axos) collaboration, and it stays available next to The Line. Both are Hyprland sessions, so you can have both installed and pick one at the login screen.
 
+## Apps that come with it
+
+Both desktops install `kira-desktop-apps`: a browser, PDF, image and media viewers, a calculator, an archiver, editors, and [kokuin](/shell-and-tools#kokuin-how-your-machine-boots), which shows how the machine booted and explains every step.
+
 ## Login
 
 Logging in goes through [greetd](https://sr.ht/~kennylevinsen/greetd/), which launches a kiosk Wayland session (cage) hosting the login screen. It shows on one monitor even when several are connected. Pick your session there and log in, greetd hands off to the desktop session you selected and remembers your last user and session for next time.

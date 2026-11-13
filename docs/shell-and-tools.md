@@ -42,6 +42,17 @@ fetch
 
 Prints a summary of your system: shell, uptime, and the Kira color palette. It is not run automatically on login, run it whenever you want it.
 
+## Kokuin: how your machine boots
+
+```sh
+kokuin-cli status
+kokuin-cli tui
+```
+
+[kokuin-cli](https://github.com/shinigami-os/kokuin-cli) shows how the machine booted, from the firmware to the desktop: the chain (firmware, bootloader, kernel, init, session), every stage on one time axis, every event and why it happens. It reads the boot you are in, and with `sudo kokuin-cli enable` it records the next ones, so every program that ran is kept. `kokuin-cli diff -2 last` compares two boots, `kokuin-cli explain` explains each step in plain words. It ships with `kira-kokuin-cli`, which `kira-kokuin` pulls in.
+
+On a Kira desktop, [kokuin](https://github.com/shinigami-os/kokuin) is the same thing as an app, for those who prefer not to use a terminal. It is installed with the desktop (`kira-kokuin`, through `kira-desktop-apps`) and found in the launcher by typing `kokuin`. It does everything the command does: reading and saving boots, the timeline, comparing two boots, the explanations, and the recorder (each change can be previewed first, and asks for your password only when it is done).
+
 ## Where to go next
 
 - [flux Command Reference](/flux/commands), for installing anything else you need.
