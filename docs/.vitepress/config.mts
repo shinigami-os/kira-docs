@@ -50,6 +50,7 @@ export default defineConfig({
         items: [
           { text: 'System Overview', link: '/architecture/overview' },
           { text: 'Init System (runit)', link: '/architecture/init-system' },
+          { text: 'Bootloader (GRUB)', link: '/architecture/bootloader' },
         ],
       },
       {

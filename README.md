@@ -14,6 +14,7 @@ docs/
   architecture/
     overview.md                   System overview
     init-system.md                runit
+    bootloader.md                 GRUB: os-prober, the theme
   flux/
     overview.md
     commands.md                   Command reference
